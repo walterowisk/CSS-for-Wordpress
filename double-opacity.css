@@ -1,0 +1,19 @@
+/* Hover  de opacidade contrária em dois elementos sobrepostos */
+
+.hover {
+opacity:0;
+transition: opacity 0.4s;
+}
+
+selector:hover .hover {
+opacity: 1;
+}
+
+.normal {
+opacity:1;
+transition: opacity 0.4s;
+}
+
+selector:hover .normal {
+opacity: 0;
+}
