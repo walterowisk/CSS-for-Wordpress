@@ -1,0 +1,35 @@
+/* Botão com borda gradiente */
+
+.elementor-button {
+    background: transparent !important;
+    z-index: 0;
+    position: relative;
+    color: white; /* Defina a cor do texto do botão */
+    overflow: hidden; /* Adicionamos overflow: hidden para garantir que o efeito não ultrapasse o limite do botão */
+       
+   
+}
+
+.elementor-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    padding: 2px; /* Espessura da borda */
+    border-radius: inherit;
+    background: linear-gradient(45deg, #381b56, #876db2); /* Duas cores: #381b56 e #876db2 */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    filter: brightness(200%) blur(2px); /* Adicionamos o filtro de brilho e desfoque para criar o efeito neon */
+}
+
+
+selector .elementor-button.elementor-button-link.elementor-size-lg {
+    box-shadow: 0 0 10px 2px #2e0b48;
+}
