@@ -1,0 +1,6 @@
+/* Efeito blur no fundo */
+
+selector {
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+}
