@@ -1,0 +1,16 @@
+/* CSS do código que digita e apaga frases (inserido no custom css do widget html*/
+
+#resume-subtitle{
+    color:#D4D4D8;
+
+/* Text/p-14 */
+font-size: 14px;
+font-family: Space Grotesk;
+line-height: 10%;
+letter-spacing: 0.14px;
+
+}
+selector{
+    margin-top: -4px;
+    margin-bottom: -2px;
+}
