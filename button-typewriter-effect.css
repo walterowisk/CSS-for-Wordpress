@@ -1,0 +1,7 @@
+/* Botão com efeito #CSS
+Efeito: profundidade ao clicar, tipo teclado de  máquina de escrever */
+
+selector:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
