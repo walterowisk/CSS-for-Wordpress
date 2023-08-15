@@ -1,0 +1,5 @@
+/* Deixar um texto/palavra em bold ao passar o mouse  */
+
+selector:hover {
+font-weight: bold;
+}
