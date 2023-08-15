@@ -1,0 +1,9 @@
+/* Aumentar o tamanho do ícone/img no botão e alinhar ícone/texto ao centro  */
+
+selector svg{
+font-size: 24px;
+}
+
+selector .elementor-button-content-wrapper {
+    align-items: center;
+}
