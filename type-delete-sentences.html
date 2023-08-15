@@ -1,0 +1,55 @@
+<!--HTML/JS com código que digita e apaga frases-->
+
+<span id="resume-subtitle"></span>
+<script>
+  const Type = async (words, elementId) => {
+    const htmlDom = document.getElementById(elementId);
+    const delay = (time = 0) => new Promise(resolve => setTimeout(resolve, time));
+  
+    const eraser = async () => {
+      const wordOriginalLength = htmlDom.innerText.length;
+      for (let i = 0; i < wordOriginalLength; i++) {
+        await delay(40);
+        htmlDom.innerText = htmlDom.innerText.slice(0, -1);
+      }
+    };
+  
+    const blinking = async (times) => {
+      for (let i = 0; i < times; i++) {
+        await delay(200);
+        htmlDom.innerText = htmlDom.innerText.endsWith("|")
+          ? htmlDom.innerText.slice(0, -1)
+          : htmlDom.innerText + "|";
+      }
+    };
+  
+    const writter = async (word) => {
+      const wordArray = word.split("");
+      for (let i = 0; i <= wordArray.length; i++) {
+        await delay(50);
+        if (i === wordArray.length) {
+          await blinking(11);
+        } else {
+          htmlDom.innerText = wordArray.slice(0, i).join("") + "|";
+        }
+      }
+      await eraser();
+    };
+  
+    const init = async () => {
+      for (let i = 0; i < words.length; i++) {
+        await writter(words[i]);
+      }
+    };
+  
+    await init();
+    await Type(words, elementId); // reinicia o loop
+  };
+  
+  Type([
+    "Crie exemplos de headline para meu produto",
+    "Crie avatares de clientes para meus depoimentos",
+    "Melhore a qualidade dessas imagens em 8 vezes",
+    "Remova e troque o fundo dessas fotografias"
+  ], "resume-subtitle");
+</script>
