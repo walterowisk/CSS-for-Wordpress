@@ -1,0 +1,14 @@
+/* Deixar uma linha embaixo da tab ativa */
+
+
+selector .elementor-tabs-wrapper {
+    border-bottom: 1px solid #ececec !important;
+}
+
+selector .elementor-active {
+    border-bottom: 1px solid #b659ba !important;
+}
+
+selector .elementor-tab-title {
+    border-radius: 0px !important;
+}
