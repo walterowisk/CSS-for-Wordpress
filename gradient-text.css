@@ -1,0 +1,29 @@
+Gradiente no texto: 
+
+Usar no título:
+
+<span class="tag">SEUTEXTO</span>
+/* Texto em gradiente
+
+Usar na caixa de texto: <span class="tag">SEU TEXTO</span>
+
+Após definir a classe no bloco de texto desejado basta
+inserir o CSS customizado. 
+Veja abaixo dois exemplos: */
+
+.tag {
+  background: linear-gradient(to right, #EFDEFF, #C082FF, #7967FF, #9081FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.tag{
+
+background: linear-gradient(45deg, #C082FF
+ 0%, #7967FF  100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
