@@ -1,0 +1,11 @@
+/* Texto com cor dupla
+
+Exemplo:
+Lorem ipsum dolor sit ame et <span class="txtcinza">dolore magna aliqua</span>
+
+CSS: */
+
+.txtcinza{
+    color: #a1a1aa;
+}
+
