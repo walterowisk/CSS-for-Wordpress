@@ -1,0 +1,15 @@
+/* Fazer um elementor girar em loop */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Defina as propriedades do elemento que você deseja animar */
+selector {
+animation: spin 4s linear infinite; /* Ajuste a duração e o tipo de animação conforme necessário */
+}
