@@ -1,0 +1,16 @@
+/* Inserir animação de flutuação em um elemento. */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+
+}
+
+/* Defina as propriedades do elemento que você deseja animar */
+selector {
+  animation: float 8s infinite; /* Ajuste a duração da animação conforme necessário */
+}
