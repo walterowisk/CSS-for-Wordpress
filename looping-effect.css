@@ -1,6 +1,13 @@
-/* Fazer um elementor girar em loop */
+/* Criar animação de rotação infinita.
 
-@keyframes spin {
+Boa prática: o objeto em questão deve estar centralizado 
+tanto no conteúdo quanto no alinhamento avançado */
+
+selector {
+animation: rodando 4s infinite linear;
+}
+
+@keyframes rodando {
   0% {
     transform: rotate(0deg);
   }
@@ -9,7 +16,12 @@
   }
 }
 
-/* Defina as propriedades do elemento que você deseja animar */
-selector {
-animation: spin 4s linear infinite; /* Ajuste a duração e o tipo de animação conforme necessário */
-}
+/* Segue abaixo uma outra opção para o trecho keyframes acima:
+
+@keyframes rodando {
+  from {
+    transform: rotate(0deg);
+	} to {
+    transform: rotate(360deg);
+	}
+} */
