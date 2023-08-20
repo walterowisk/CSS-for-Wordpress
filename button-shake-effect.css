@@ -1,8 +1,7 @@
-/* Botão com efeito #CSS 
-Efeito: treme ao passar o mouse */
+/* Botão com efeito de tremer ao passar o mouse */
 
 
-selector:hover {
+.elementor-button:hover {
  animation: shake3856 0.3s linear infinite both;
 }
 
