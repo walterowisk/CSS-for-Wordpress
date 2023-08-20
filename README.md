@@ -15,7 +15,7 @@
 </style>
 ```
 
-> [!Importante]
+> [!IMPORTANT]
 > Os códigos CSS deste repositório foram testados somente no construtor de páginas Elementor.
 
 <div align="center">
