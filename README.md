@@ -5,8 +5,6 @@
     </a>
 </div>
 
----
-
 
 
 ```CSS
@@ -16,7 +14,6 @@
 
 </style>
 ```
----
 
 > **Importante**\
 > Os códigos CSS deste repositório foram testados somente no construtor de páginas Elementor.
