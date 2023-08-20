@@ -3,9 +3,9 @@
     <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=css,wordpress" />
     </a>
-</div>
+</div>   
 
-
+<br>
 
 ```CSS
 <style>
@@ -13,10 +13,12 @@
     Códigos CSS para customizar elementos dentro do Wordpress
 
 </style>
-```
+``` 
+
+<br>
 
 > [!IMPORTANT]
-> Os códigos CSS deste repositório foram testados somente no construtor de páginas Elementor.
+> Os códigos CSS deste repositório foram testados somente no construtor de páginas Elementor.   
 
 <div align="center">
 
