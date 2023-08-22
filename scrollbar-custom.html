@@ -1,0 +1,37 @@
+<!-- Duas formas de inserir o código de personalização da scrollbar:
+1. Painel do Elementor: configurações => avançado => custom css
+
+2. Colocando um widget HTML no final da página. Neste caso o código 
+deve estar dentro da tag <style>. Esta opção é melhor caso pretenda 
+transformar a página em template para exportar. -->
+
+<style>
+
+html, body {
+   max-width: 100%;
+   overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;	/* Largura scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #000000; /* Cor de fundo scrollbar */
+}
+  
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 3px; /* Arrendondamento borda */
+    border-radius: 3px; /* Arrendondamento borda */
+    background: linear-gradient(180deg, #e9ebc3, #e4cd5b);
+    border: 2px solid #F7FBFF
+}
+
+::-webkit-scrollbar-thumb:hover {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: linear-gradient(0deg, #e9ebc3, #e4cd5b);
+    border: 2px solid #F7FBFF
+}
+
+</style>
