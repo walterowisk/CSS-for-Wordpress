@@ -10,7 +10,7 @@
 ```CSS
 <style>
 
-    Códigos CSS[^1] para customizar elementos dentro do Wordpress
+    Códigos CSS para customizar elementos dentro do Wordpress
 
 </style>
 ``` 
@@ -25,5 +25,3 @@
 ![Elementor](https://img.shields.io/badge/Elementor-92003B.svg?style=for-the-badge&logo=Elementor&logoColor=white)
 
 </div>
-
-[^1]: E, eventualmente HTML e Javascript.
