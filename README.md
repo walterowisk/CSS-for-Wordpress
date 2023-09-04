@@ -10,7 +10,7 @@
 ```CSS
 <style>
 
-    Códigos CSS: para 
+    .Códigos CSS: para 
     customizar elementos 
     dentro do (Wordpress);
 
