@@ -1,64 +1,67 @@
 /* Inserir um texto com efeito de letreiro */
-/* Colar o texto abaixo em Avançado => Atributos (* requer Elementor Pro*) do conteiner: */
 
-data-marquee|Seu texto aqui •
+/* 1 - Colar o texto abaixo em Avançado => Atributos (* requer Elementor Pro*) do conteiner: 
+
+data-marquee|Seu texto aqui • */
 
 /* ======================================================================= */
-/* Colar o código Javascript abaixo em um widget HTML dentro do conteiner: */
+/* 2 - Colar o código Javascript abaixo em um widget HTML dentro do conteiner: */
 
 <script>
 const getMarqueeNode = content => {
-const el = document.createElement('div');
-el.setAttribute('data-marquee-style', true);
-el.textContent = content
-return el;
+  const el = document.createElement('div');
+  el.setAttribute('data-marquee-style', true);
+  el.textContent = content
+  return el;
 }
+
 class Marquee {
-constructor(el){
-this.el = el;
-this.content = el.getAttribute('data-marquee')
-this.render();
+  constructor(el){
+    this.el = el;
+    this.content = el.getAttribute('data-marquee')
+    this.render();
+  }
+  
+  render(){
+    // create the shadow element to measure and calculate
+    // the amount of animated items required for marquee
+    
+    // create
+    const shadow = getMarqueeNode(this.content);
+    shadow.setAttribute('data-marquee-shadow', true);
+    // add shadow element to sanitized DOM
+    this.el.innerHTML = "";
+    this.el.appendChild(shadow);
+    // calculate how many visible items are needed
+    const inView = this.calculateItemsInView(shadow);
+    // create container to house animated visible items
+    const overflow = document.createElement('div');
+    overflow.setAttribute('data-marquee-overflow', true);
+    const content = document.createElement('div');
+    content.setAttribute('data-marquee-container', true);
+    // put the content container into an overflow: hidden wrapper
+    overflow.appendChild(content);
+    // double the amount to fill the screen to animate loop
+    const count = inView * 3;
+    // populate with children
+    for( var i = 0; i < count; i++) {
+      content.appendChild(getMarqueeNode(this.content))
+    }
+    // add to DOM
+    this.el.appendChild(overflow);
+    
+    // debug
+    // console.log("visible items required", inView);
+    // console.log("total items required", count);
+  }
+  
+  calculateItemsInView(ref){
+    const [single, total] = [ref.clientWidth, ref.parentNode.clientWidth];
+    // ceil in order to ensure there's never a shortage
+    return Math.floor(total / single) + 1;
+  }
 }
 
-render(){
-// create the shadow element to measure and calculate
-// the amount of animated items required for marquee
-
-// create
-const shadow = getMarqueeNode(this.content);
-shadow.setAttribute('data-marquee-shadow', true);
-// add shadow element to sanitized DOM
-this.el.innerHTML = "";
-this.el.appendChild(shadow);
-// calculate how many visible items are needed
-const inView = this.calculateItemsInView(shadow);
-// create container to house animated visible items
-const overflow = document.createElement('div');
-overflow.setAttribute('data-marquee-overflow', true);
-const content = document.createElement('div');
-content.setAttribute('data-marquee-container', true);
-// put the content container into an overflow: hidden wrapper
-overflow.appendChild(content);
-// double the amount to fill the screen to animate loop
-const count = inView * 3;
-// populate with children
-for( var i = 0; i < count; i++) {
-content.appendChild(getMarqueeNode(this.content))
-}
-// add to DOM
-this.el.appendChild(overflow);
-
-// debug
-// console.log("visible items required", inView);
-// console.log("total items required", count);
-}
-
-calculateItemsInView(ref){
-const [single, total] = [ref.clientWidth, ref.parentNode.clientWidth];
-// ceil in order to ensure there's never a shortage
-return Math.floor(total / single) + 1;
-}
-}
 // find elements and create Marquee instances
 const nodes = document.querySelectorAll('[data-marquee]')
 const arr = Array.from(nodes);
@@ -69,7 +72,7 @@ window.addEventListener( 'resize', () => refs.map( r => r.render() ) );
 
 
 /* ================================================================ */
-/* Colar o CSS abaixo em Configurações da página => Custom CSS
+/* 3 - Colar o CSS abaixo em Configurações da página => Custom CSS
   ou em Custom CSS do conteiner onde está o script */
 
 @-webkit-keyframes marquee {
@@ -84,6 +87,7 @@ window.addEventListener( 'resize', () => refs.map( r => r.render() ) );
   }
 }
 
+/* Controlar a velocidade do carrossel */
 [data-marquee] {
   --loop-duration: 30s;
   display: block;
@@ -115,12 +119,32 @@ window.addEventListener( 'resize', () => refs.map( r => r.render() ) );
   justify-content: center;
 }
 
+/* Controlar o estilo do texto */
 [data-marquee-style] {
-  padding: 1.5em 0.3em;
+  padding: 0.3em 0.3em;
   display: flex;
-  color: #000000;
-  font-size: 1em;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  color: #1D1E26;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+
+/* Controlar o carrossel no celular */
+@media (min-width: 350px) and (max-width: 550px){
+    
+[data-marquee-style] {
+  padding: 0.3em 0.3em;
+  display: flex;
+  color: #1D1E26;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+[data-marquee] {
+  --loop-duration: 10s;
+  display: block;
+}
+    
 }
