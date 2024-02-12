@@ -1,0 +1,32 @@
+/* Texto com bordas para corrigir eventuais falhas desse efeito
+quando aplicado diretamente no Elementor em determinadas fontes.
+O Efeito de opacidade é opcional. */
+
+selector .elementor-heading-title::after,
+selector .elementor-heading-title::before{
+    content: "TEXT WITH BORDERS";
+    padding: 0px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+}
+
+selector .elementor-heading-title::before{
+    background: none;
+    z-index: 0;
+    text-stroke:2px #ffffff;
+    -webkit-text-stroke:2px #ffffff;
+}
+
+selector{
+    opacity: 0.3;
+    mask-image: linear-gradient(to bottom, #000, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+}
