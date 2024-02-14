@@ -27,3 +27,11 @@
 ![Elementor](https://img.shields.io/badge/Elementor-92003B.svg?style=for-the-badge&logo=Elementor&logoColor=white)
 
 </div>
+
+## Pré-visualização dos códigos aplicados
+
+<details>
+<summary>button-pulse-effect</summary>
+
+![button-pulse-effect]()
+</details>
