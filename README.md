@@ -33,5 +33,5 @@
 <details>
 <summary>button-pulse-effect</summary>
 
-![button-pulse-effect]()
+![button-pulse-effect](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/button-pulse-effect.gif)
 </details>
