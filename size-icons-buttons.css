@@ -1,0 +1,12 @@
+/* Aumentar o tamanho de ícones em botões
+alinhando verticalmente ao centro. */
+
+
+selector .elementor-button-icon{
+    font-size: 32px;
+    vertical-align: middle;
+}
+
+.elementor-button-content-wrapper {
+    align-items: center;
+}
