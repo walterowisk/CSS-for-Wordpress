@@ -35,3 +35,9 @@
 
 ![button-pulse-effect](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/button-pulse-effect.gif)
 </details>
+
+<details>
+<summary>size-icons-buttons</summary>
+
+![size-icons-buttons](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/size-icons-buttons.png)
+</details>
