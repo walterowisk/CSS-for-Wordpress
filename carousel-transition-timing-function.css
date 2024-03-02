@@ -1,0 +1,12 @@
+/* Estabilizar a velocidade de transição de um carrossel contínuo.
+
+Configuração adicional Elementor:
+=> Editar carrossel de imagem => Opções adicionais => 
+Velocidade na reprodução automática: 0 => Velociade da animação: 5000 */
+
+selector .swiper-wrapper {
+      -webkit-transition-timing-function: linear !important;
+      -moz-transition-timing-function: linear !important;
+      -o-transition-timing-function: linear !important;
+      transition-timing-function: linear !important; 
+}
