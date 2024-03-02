@@ -41,3 +41,9 @@
 
 ![size-icons-buttons](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/size-icons-buttons.png)
 </details>
+
+<details>
+<summary>carousel-transition-timing-function</summary>
+
+![carousel-transition-timing-function](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/carousel-transition-timing-function.gif)
+</details>
