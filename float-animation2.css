@@ -1,7 +1,7 @@
 /* Outra opção de código CSS para animação de flutuação de elementos
 Importante!: Inserir classe no elemento que deseja animar. */
 
-selector .image1 {
+selector.image1 {
     animation: float 10s ease;
     animation-iteration-count: infinite;
 }
