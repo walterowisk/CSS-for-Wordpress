@@ -31,6 +31,12 @@
 ## Pré-visualização dos códigos aplicados
 
 <details>
+<summary>float-animation</summary>
+
+![float-animation](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/float-animation.gif)
+</details>
+
+<details>
 <summary>button-pulse-effect</summary>
 
 ![button-pulse-effect](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/button-pulse-effect.gif)
