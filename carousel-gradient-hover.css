@@ -1,0 +1,44 @@
+/* Carrossel contínuo com gradiente nas laterais e efeito hover colorido */
+
+
+/* GRADIENTE NAS LATERAIS */
+selector {
+    mask-image: 
+   linear-gradient(to left, transparent 2%, black, transparent 98%);
+   -webkit-mask-image: 
+   linear-gradient(to left, transparent 2%, black, transparent 98%);
+}
+
+
+/* CARROSSEL EM ANIMACAO CONTINUA */
+selector .swiper-wrapper {
+      -webkit-transition-timing-function: linear !important;
+      -moz-transition-timing-function: linear !important;
+      -o-transition-timing-function: linear !important;
+      transition-timing-function: linear !important; 
+}
+
+
+/* DEIXAR IMAGEM EM ESCALA DE CINZA E COLORIR AO PASSAR O MOUSE */
+selector img {
+    filter: saturate(0);
+    transition: All 0.3s ease;
+    opacity: 0.4;
+}
+selector img:hover {
+    filter: saturate(1);
+    transition: All 0.3s ease;
+    opacity: 1;
+}
+
+
+
+/* #################################################################### */
+/* VARIAÇÃO DE GRADIENTE NAS LATERAIS */
+
+selector {
+    mask-image: 
+       linear-gradient(to left, transparent 1%, black 10%, black 90%, transparent 99%);
+    -webkit-mask-image: 
+       linear-gradient(to left, transparent 1%, black 10%, black 90%, transparent 99%);
+}
