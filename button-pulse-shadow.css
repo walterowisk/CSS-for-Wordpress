@@ -1,0 +1,54 @@
+/* Botão com animação de pulso, fazendo-o aumentar levemente de tamanho e criar uma sombra amarela pulsante. */
+
+selector .elementor-button {
+    -webkit-box-shadow: 0 0 0 0 #000;
+            box-shadow: 0 0 0 0 #000;
+    -webkit-animation: pulse-white 2s infinite;
+            animation: pulse-white 2s infinite;
+}
+
+@-webkit-keyframes pulse-white {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-box-shadow: 0 0 0 0 #FFEC43;
+                box-shadow: 0 0 0 0 #FFEC43;
+    }
+
+    70% {
+        -webkit-transform: scale(1.01);
+                transform: scale(1.01);
+        -webkit-box-shadow: 0 0 0 10px transparent;
+                box-shadow: 0 0 0 10px transparent;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-box-shadow: 0 0 0 0 transparent;
+                box-shadow: 0 0 0 0 transparent;
+    }
+}
+
+@keyframes pulse-white {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-box-shadow: 0 0 0 0 #FFEC43;
+                box-shadow: 0 0 0 0 #FFEC43;
+    }
+
+    70% {
+        -webkit-transform: scale(1.01);
+                transform: scale(1.01);
+        -webkit-box-shadow: 0 0 0 10px transparent;
+                box-shadow: 0 0 0 10px transparent;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-box-shadow: 0 0 0 0 transparent;
+                box-shadow: 0 0 0 0 transparent;
+    }
+}
