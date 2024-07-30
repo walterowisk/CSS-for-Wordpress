@@ -1,0 +1,30 @@
+<!-- SCRIPT PARA DEIXAR A ROLAGEM/SCROLL SUAVE NO SEU SITE WORDPRESS.
+=> Dica: Add widget HTML no rodapé do site e colar o código abaixo:  -->
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script>
+
+<script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    })
+
+    //get scroll value
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+       requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+</script>
