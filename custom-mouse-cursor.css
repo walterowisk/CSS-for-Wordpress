@@ -3,6 +3,6 @@ Adicionar CSS no conteiner ou elemento onde o cursor customizado deve aparecer. 
 
 selector{
 
-cursor:url('https://studiovalentim.work/wp-content/uploads/2023/06/Group-48095421-4.png'), auto;
+cursor:url('link-do-cursor'), auto;
 
 }
