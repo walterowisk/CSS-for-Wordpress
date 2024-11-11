@@ -6,3 +6,10 @@ selector{
 cursor:url('link-do-cursor'), auto;
 
 }
+
+
+/* O código abaixo altera o cursor do mouse quando ele interage com um link. */
+
+html.click, html.click a, html.click a:hover, a:hover {
+    cursor: url('link-do-cursor'), auto;
+}
