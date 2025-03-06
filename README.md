@@ -37,7 +37,7 @@
 </details>
 
 <details>
-<summary>button-pulse-effect</summary>
+<summary>botao-pulsante</summary>
 
 ![button-pulse-effect](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/button-pulse-effect.gif)
 </details>
