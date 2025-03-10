@@ -39,7 +39,7 @@
 <details>
 <summary>botao-pulsante</summary>
 
-![button-pulse-effect](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/button-pulse-effect.gif)
+![botao-pulsante](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/button-pulse-effect.gif)
 </details>
 
 <details>
@@ -49,7 +49,7 @@
 </details>
 
 <details>
-<summary>carousel-transition-timing-function</summary>
+<summary>carrossel-estabiliza-velocidade</summary>
 
-![carousel-transition-timing-function](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/carousel-transition-timing-function.gif)
+![carrossel-estabiliza-velocidade](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/carousel-transition-timing-function.gif)
 </details>
