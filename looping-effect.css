@@ -16,7 +16,7 @@ animation: rodando 4s infinite linear;
   }
 }
 
-/* Segue abaixo uma outra opção para o trecho keyframes acima:
+/* Segue abaixo uma outra opção para o trecho keyframes acima: */
 
 @keyframes rodando {
   from {
@@ -24,4 +24,4 @@ animation: rodando 4s infinite linear;
 	} to {
     transform: rotate(360deg);
 	}
-} */
+}
