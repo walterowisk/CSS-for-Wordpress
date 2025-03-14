@@ -43,9 +43,9 @@
 </details>
 
 <details>
-<summary>size-icons-buttons</summary>
+<summary>aumentar-icone-alinhar-centro</summary>
 
-![size-icons-buttons](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/size-icons-buttons.png)
+![aumentar-icone-alinhar-centro](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/size-icons-buttons.png)
 </details>
 
 <details>
