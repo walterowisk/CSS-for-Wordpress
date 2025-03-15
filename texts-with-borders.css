@@ -1,6 +1,5 @@
-/* Texto com bordas para corrigir eventuais falhas desse efeito
-quando aplicado diretamente no Elementor em determinadas fontes.
-O Efeito de opacidade é opcional. */
+/* Texto (Widget Título) com efeito de contorno e transparência, 
+além de aplicar um degradê de máscara para suavizar a opacidade do elemento. */
 
 selector .elementor-heading-title::after,
 selector .elementor-heading-title::before{
