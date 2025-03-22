@@ -1,0 +1,218 @@
+<!-- JAVASCRIPT - EFEITO DE CONFETE AO CARREGAR A PÁGINA -->
+
+<!-- Adicionar no widget HTML do WordPress/Elementor -->
+ 
+<script>
+/**
+ * Confetti.js - Uma biblioteca simples para criar efeitos de confete
+ */
+
+// Criando um objeto global confetti
+const confetti = {
+  // Propriedades para controlar a animação
+  maxParticles: 150,
+  particles: [],
+  colors: [
+    "rgba(255,0,0,0.8)", // vermelho
+    "rgba(0,255,0,0.8)", // verde
+    "rgba(0,0,255,0.8)", // azul
+    "rgba(255,255,0,0.8)", // amarelo
+    "rgba(255,0,255,0.8)", // magenta
+    "rgba(0,255,255,0.8)", // ciano
+    "rgba(255,127,0,0.8)", // laranja
+    "rgba(255,255,255,0.8)" // branco
+  ],
+  canvas: null,
+  ctx: null,
+  running: false,
+  requestId: null,
+  fadeOutId: null,
+  fadingOut: false,
+
+  // Método para inicializar o canvas
+  init() {
+    // Criar canvas e adicionar ao corpo do documento
+    this.canvas = document.createElement("canvas");
+    this.ctx = this.canvas.getContext("2d");
+    
+    // Estilizar o canvas para cobrir toda a tela
+    this.canvas.style.position = "fixed";
+    this.canvas.style.top = 0;
+    this.canvas.style.left = 0;
+    this.canvas.style.pointerEvents = "none"; // Para permitir cliques através do canvas
+    this.canvas.style.zIndex = 999999; // Garantir que fique acima de outros elementos
+    
+    document.body.appendChild(this.canvas);
+    
+    // Ajustar o tamanho do canvas ao tamanho da janela
+    this.resizeCanvas();
+    
+    // Adicionar listener para redimensionar o canvas quando a janela for redimensionada
+    window.addEventListener("resize", () => this.resizeCanvas());
+    
+    return this;
+  },
+  
+  // Redimensionar o canvas para o tamanho da janela
+  resizeCanvas() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  },
+  
+  // Criar uma partícula de confete
+  createParticle() {
+    return {
+      x: Math.random() * this.canvas.width, // Posição X aleatória
+      y: -20, // Começar um pouco acima da tela
+      width: Math.random() * 10 + 5, // Largura aleatória entre 5 e 15
+      height: Math.random() * 10 + 5, // Altura aleatória entre 5 e 15
+      color: this.colors[Math.floor(Math.random() * this.colors.length)], // Cor aleatória da paleta
+      velocity: {
+        x: Math.random() * 6 - 3, // Velocidade X aleatória entre -3 e 3
+        y: Math.random() * 3 + 2 // Velocidade Y aleatória entre 2 e 5
+      },
+      rotation: Math.random() * 360, // Rotação inicial aleatória
+      rotationSpeed: Math.random() * 10 - 5, // Velocidade de rotação aleatória
+      opacity: 1 // Opacidade completa inicialmente
+    };
+  },
+  
+  // Desenhar uma partícula de confete
+  drawParticle(particle) {
+    this.ctx.save();
+    
+    // Transladar para a posição da partícula
+    this.ctx.translate(particle.x, particle.y);
+    
+    // Rotacionar conforme a rotação da partícula
+    this.ctx.rotate(particle.rotation * Math.PI / 180);
+    
+    // Extrair os valores RGB da cor e aplicar a opacidade
+    let color = particle.color;
+    if (color.startsWith("rgba")) {
+      // Se já for rgba, atualize apenas a opacidade
+      color = color.replace(/[\d\.]+\)$/, particle.opacity + ")");
+    } else if (color.startsWith("rgb")) {
+      // Se for rgb, converta para rgba
+      color = color.replace("rgb", "rgba").replace(")", ", " + particle.opacity + ")");
+    }
+    
+    // Definir a cor com opacidade
+    this.ctx.fillStyle = color;
+    
+    // Desenhar um retângulo
+    this.ctx.fillRect(-particle.width / 2, -particle.height / 2, particle.width, particle.height);
+    
+    this.ctx.restore();
+  },
+  
+  // Atualizar a animação
+  update() {
+    if (!this.running && !this.fadingOut) return;
+    
+    // Limpar o canvas
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    // Adicionar novas partículas enquanto o número máximo não for atingido e não estiver em fade out
+    if (!this.fadingOut && this.particles.length < this.maxParticles) {
+      this.particles.push(this.createParticle());
+    }
+    
+    // Atualizar e desenhar cada partícula
+    for (let i = 0; i < this.particles.length; i++) {
+      const particle = this.particles[i];
+      
+      // Atualizar posição
+      particle.x += particle.velocity.x;
+      particle.y += particle.velocity.y;
+      
+      // Atualizar rotação
+      particle.rotation += particle.rotationSpeed;
+      
+      // Se estiver em fade out, reduzir a opacidade
+      if (this.fadingOut) {
+        particle.opacity -= 0.02; // Reduzir a opacidade gradualmente
+      }
+      
+      // Desenhar partícula se ainda for visível
+      if (particle.opacity > 0) {
+        this.drawParticle(particle);
+      }
+      
+      // Remover partículas que saíram da tela ou ficaram invisíveis
+      if (particle.y > this.canvas.height + 20 || particle.opacity <= 0) {
+        this.particles.splice(i, 1);
+        i--;
+      }
+    }
+    
+    // Verificar se todas as partículas desapareceram durante o fade out
+    if (this.fadingOut && this.particles.length === 0) {
+      this.finalizeStop();
+      return;
+    }
+    
+    // Continuar a animação
+    this.requestId = requestAnimationFrame(() => this.update());
+  },
+  
+  // Iniciar o efeito de confete
+  start() {
+    if (this.running) return this;
+    
+    // Cancelar qualquer fade out em andamento
+    this.fadingOut = false;
+    if (this.fadeOutId) {
+      clearTimeout(this.fadeOutId);
+      this.fadeOutId = null;
+    }
+    
+    // Inicializar se necessário
+    if (!this.canvas) {
+      this.init();
+    }
+    
+    this.running = true;
+    this.particles = [];
+    
+    // Iniciar a animação
+    this.update();
+    
+    return this;
+  },
+  
+  // Parar o efeito de confete com fade out
+  stop() {
+    // Iniciar o processo de fade out
+    this.running = false;
+    this.fadingOut = true;
+    
+    return this;
+  },
+  
+  // Finalizar a parada após o fade out
+  finalizeStop() {
+    this.fadingOut = false;
+    
+    if (this.requestId) {
+      cancelAnimationFrame(this.requestId);
+      this.requestId = null;
+    }
+    
+    // Limpar o canvas para garantir que não fique nenhum resíduo
+    if (this.ctx && this.canvas) {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+    
+    return this;
+  }
+};
+
+// Iniciar o confetti assim que o script for carregado
+confetti.start();
+
+// Parar após 3 segundos (3000 milissegundos)
+setTimeout(function() {
+  confetti.stop();
+}, 3000);
+</script>
