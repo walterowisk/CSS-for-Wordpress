@@ -24,7 +24,7 @@
 
 <div align="center">
 
-![Elementor](https://img.shields.io/badge/Elementor-92003B.svg?style=for-the-badge&logo=Elementor&logoColor=white)
+![Elementor](https://svgl-badge.vercel.app/api/Software/Elementor?theme=dark)
 
 </div>
 
