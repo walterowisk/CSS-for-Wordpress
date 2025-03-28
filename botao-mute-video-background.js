@@ -1,11 +1,14 @@
 // Botão de Mute on/off em vídeo de background na seção elementor
 
+<style>
 .toggle_sound{
         cursor: pointer;
 }
+</style>
 
 
-
+<script>
+        
 document.addEventListener('DOMContentLoaded', function() {
 
 var toggleSoundButton = document.querySelector('.toggle_sound');
@@ -17,3 +20,5 @@ heroBackgroundVideo.muted=false;
 } else {
 heroBackgroundVideo.muted=true;
 } }); });
+
+</script>
