@@ -53,3 +53,9 @@
 
 ![carrossel-estabiliza-velocidade](https://raw.githubusercontent.com/walterowisk/CSS-for-Wordpress/main/preview-img/carousel-transition-timing-function.gif)
 </details>
+
+<details>
+<summary>texto-embaralhado-revelado</summary>
+
+![texto-embaralhado-revelado](/preview-img/txt-embaralhado.gif)
+</details>
