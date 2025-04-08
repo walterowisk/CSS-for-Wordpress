@@ -1,0 +1,56 @@
+<!-- EMBARALHAR E DEPOIS REVELAR O TEXTO OU PALAVRA PASSAR O MOUSE-->
+
+<!-- Considerando que a palavra a ser embaralhada seja "COMUNIDADE", o utilize o <span> com data-value com a palavra a ser revelada.
+Insira a classe "txtEfeito" no widget de texto que deseja aplicar o efeito.     -->
+
+<span data-value="COMUNIDADE">COMUNIDADE</span>
+
+
+
+<!-- CSS opcional -->
+<style>
+h2{
+    cursor: pointer
+}
+
+h2 :hover{
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border-radius: 16px
+}
+</style>
+
+
+
+<!-- Cole o javascript abaixo em um widget HTML de preferência ou no rodapé do site. -->
+<script>
+const txtEfeito = document.querySelector(".txtEfeito span");
+const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let intervalo = null;
+
+if (txtEfeito) {
+    txtEfeito.addEventListener("mouseover", (e) => {
+        let contador = 0;
+        clearInterval(intervalo);
+
+        intervalo = setInterval(() => {
+            e.target.innerText = e.target.innerText
+                .split("")
+                .map((letter, index) => {
+                    return index < contador
+                        ? e.target.dataset.value[index]
+                        : alfabeto[Math.floor(Math.random() * 26)];
+                })
+                .join("");
+
+            if (contador >= e.target.dataset.value.length) {
+                clearInterval(intervalo);
+            }
+
+            contador += 1 / 3;
+        }, 30);
+    });
+}
+</script>
