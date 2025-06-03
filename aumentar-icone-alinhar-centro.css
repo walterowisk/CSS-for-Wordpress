@@ -12,13 +12,34 @@ selector .elementor-button-icon{
 }
 
 
+/* ======================================================
+OPÇÃO 2:
+Código para ajustar o tamanho do ícone do botão, mude os valores de  font-size 
+e  max-height  para alterar a largura e altura do ícone e use o valor  margin-top 
+para fazer o ajuste fino de alinhamento vertical do ícone. */
+
+selector .elementor-button-icon{
+    margin-top: 0px;
+    font-size: 20px;
+    max-height: 20px;
+    z-index: 10;
+}
+
+selector .elementor-button-text {
+   flex-grow: 0;
+   align-items: center;
+   z-index: 10;
+}
+
+
+
 /* Aumentar o tamanho do ícone/img no botão e alinhar 
 ícone/texto ao centro  */
 
 selector svg{
-font-size: 24px;
-}
-
-selector .elementor-button-content-wrapper {
-    align-items: center;
-}
+    font-size: 24px;
+    }
+    
+    selector .elementor-button-content-wrapper {
+        align-items: center;
+    }
